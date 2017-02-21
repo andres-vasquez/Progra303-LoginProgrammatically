@@ -13,14 +13,14 @@ public class MainActivity extends AppCompatActivity {
 
 
     LinearLayout lyVertical;
-        TextView lblUsuario;
-        EditText txtUsuario;
-        TextView lblPassword;
-        EditText txtPassword;
-        LinearLayout lyHorizontal;
-            Button btnEnviar;
-            Button btnLimpiar;
-        TextView txtResultado;
+    TextView lblUsuario;
+    EditText txtUsuario;
+    TextView lblPassword;
+    EditText txtPassword;
+    LinearLayout lyHorizontal;
+    Button btnEnviar;
+    Button btnLimpiar;
+    TextView txtResultado;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -37,6 +37,19 @@ public class MainActivity extends AppCompatActivity {
         btnEnviar =new Button(this);
         btnLimpiar =new Button(this);
         txtResultado =new TextView(this);
+
+        int dps=20;
+        final float scale = this.getResources().getDisplayMetrics().density;
+        int pixels = (int) (dps * scale + 0.5f);
+
+        lyVertical.setPadding(pixels,pixels,pixels,pixels);
+
+        lblUsuario.setLayoutParams(new LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.MATCH_PARENT,
+                LinearLayout.LayoutParams.WRAP_CONTENT
+        ));
+        lblUsuario.setTextSize(20);
+
 
         //Primeras carateristicas
         lyVertical.setOrientation(LinearLayout.VERTICAL);
