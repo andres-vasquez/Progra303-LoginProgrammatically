@@ -44,10 +44,13 @@ public class MainActivity extends AppCompatActivity {
 
         lyVertical.setPadding(pixels,pixels,pixels,pixels);
 
-        lblUsuario.setLayoutParams(new LinearLayout.LayoutParams(
+        LinearLayout.LayoutParams layout=new LinearLayout.LayoutParams(
                 LinearLayout.LayoutParams.MATCH_PARENT,
                 LinearLayout.LayoutParams.WRAP_CONTENT
-        ));
+        );
+        lyVertical.setLayoutParams(layout);
+
+        lblUsuario.setLayoutParams(layout);
         lblUsuario.setTextSize(20);
 
 
@@ -59,6 +62,15 @@ public class MainActivity extends AppCompatActivity {
         lyHorizontal.setOrientation(LinearLayout.HORIZONTAL);
         btnEnviar.setText("Enviar");
         btnLimpiar.setText("Limpiar");
+
+
+        LinearLayout.LayoutParams layoutHorizontal=new LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.MATCH_PARENT,
+                LinearLayout.LayoutParams.WRAP_CONTENT
+        );
+        layoutHorizontal.setMargins(pixels,0,0,0);
+        lyHorizontal.setLayoutParams(layoutHorizontal);
+
 
         //Construmimos las vistas del nivel inferior al nivel superior
         //Agregamos los botones
